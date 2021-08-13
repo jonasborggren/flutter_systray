@@ -54,7 +54,7 @@ func (p *FlutterSystrayPlugin) InitPluginGLFW(window *glfw.Window) error {
 // InitPlugin initializes the plugin.
 func (p *FlutterSystrayPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 	p.channel = plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
-	p.channel.HandleFuncSync("initSystray", p.initSystrayHandler)
+	p.channel.HandleFunc("initSystray", p.initSystrayHandler)
 	p.channel.HandleFunc("updateMenu", p.updateMenuHandler)
 	return nil
 }
