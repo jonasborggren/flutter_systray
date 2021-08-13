@@ -67,7 +67,7 @@ class FlutterSystray {
   /*
   * Show a systray icon
   * */
-  static Future<String> initSystray(MainEntry main) async {
+  Future<String> initSystray(MainEntry main) async {
     String value = await _channel.invokeMethod('initSystray', jsonEncode(main.serialize()));
     return value;
   }
